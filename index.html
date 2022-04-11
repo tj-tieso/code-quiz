@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Coding Quiz Challenge</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="view-scores" id="view-scoresId">View High Scores</div>
+      <div class="timer" id="timerId">Time: 0</div>
+    </header>
+    <main class="page-content" id="page-content">
+      <section class="quiz-wrapper">
+        <h1 class="title">Coding Quiz Challenge</h1>
+        <!-- changes to question when start-->
+        <p class="start-screen-text">
+          Try to answer the following code related questions within the time
+          limit. Keep in mind that incorrect answers will penalize your
+          score/time by ten seconds
+        </p>
+        <ul class="questions" id="questions"></ul>
+        <ul class="answer-display" id="answer-display"></ul>
+        <!-- multiple choice  go here-->
+        <button class="start-btn" id="start-quiz" type="submit">
+          Start Quiz
+        </button>
+      </section>
+    </main>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
+
+<!-- 1. Create Header
+        a. div one = view highscores (with class/id tags)
+        b. div two = timer countdown (with class/id tags)
+    2. Create Main div
+        a. h1 = "Coding Quiz Challenge" (with class/id tags)
+        b. <div> this is where ?'s will go(with class/id tags)-->

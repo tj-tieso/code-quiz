@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 24px;
+  --primary: #2f3e46;
+  --secondary: #354f52;
+  --tertiary: #cad2c5;
+}
+
+body {
+  background-color: var(--tertiary);
+  color: var(--primary);
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  font-size: 16px;
+}
