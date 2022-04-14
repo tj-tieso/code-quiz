@@ -12,23 +12,30 @@
       <div class="view-scores" id="view-scoresId">View High Scores</div>
       <div class="timer" id="timerId">Time: 0</div>
     </header>
+
     <main class="page-content" id="page-content">
       <section class="quiz-wrapper">
         <h1 class="title">Coding Quiz Challenge</h1>
         <!-- changes to question when start-->
-        <p class="start-screen-text">
+        <p id="para">
           Try to answer the following code related questions within the time
           limit. Keep in mind that incorrect answers will penalize your
           score/time by ten seconds
         </p>
+        <ul class="questions" id="questions">
+          <div class="boxes" id="box">1. Strings</div>
+          <div class="boxes" id="box">2. alerts</div>
+          <div class="boxes" id="box">3. Numbers</div>
+          <div class="boxes" id="box">4. booleans</div>
+        </ul>
         <button class="start-btn" id="start-quiz" type="submit">
           Start Quiz
         </button>
-        <ul class="questions" id="questions"></ul>
         <ul class="answer-display" id="answer-display"></ul>
         <!-- multiple choice  go here-->
       </section>
     </main>
+
     <script src="./assets/js/script.js"></script>
   </body>
 </html>

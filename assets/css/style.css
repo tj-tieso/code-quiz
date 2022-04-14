@@ -8,6 +8,8 @@
   --primary: #2f3e46;
   --secondary: #354f52;
   --tertiary: #cad2c5;
+  --accent1: #84a98c;
+  --accent2: #9a031e;
 }
 
 body {
@@ -22,6 +24,9 @@ header {
   padding: 10px;
   justify-content: space-between;
   font-size: 16px;
+  background: linear-gradient(var(--secondary), var(--primary));
+  border-bottom: 2px solid var(--accent2);
+  color: var(--tertiary);
 }
 
 section {
@@ -33,10 +38,34 @@ section {
 section h1 {
   text-decoration: none;
   margin: 5px;
+  flex: 1;
 }
 
 section p {
   margin: 5px;
+}
+
+#questions {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex: 1;
+}
+
+#questions div {
+  width: 250px;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%);
+  background-color: var(--primary);
+  color: var(--accent1);
+  text-align: left;
+}
+
+#questions div:hover {
+  background-color: var(--secondary);
 }
 
 button {
