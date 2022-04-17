@@ -1,6 +1,6 @@
 //global variables
 var questionIndex = 0;
-var quizTimer = 0;
+var quizTimer = 60;
 var score = 0;
 var choiceEl = document.querySelector(".choices");
 var quizBoxEl = document.querySelector(".quiz-wrapper");
@@ -58,9 +58,6 @@ var questionOptions = [
 
 //function to start game
 var quizStart = function () {
-  score = 0;
-  // start timer
-
   //removes paragraph
   var paragraph = document.getElementById("para");
   paragraph.remove();
@@ -69,6 +66,8 @@ var quizStart = function () {
   var buttonRemove = document.getElementById("start-quiz");
   buttonRemove.remove();
 
+  // start timer
+  startTimer();
   //get first/new
   generateQuestions();
 };
@@ -120,6 +119,9 @@ var displayResult = function (choice, answer, result) {
   }, 1000);
 };
 
+// start timer
+var startTimer = function () {};
+
 var enterScore = function () {
   // input initials
   //log score and intials to local storage
@@ -131,8 +133,8 @@ var startScreen = function () {
 };
 
 var viewScores = function () {
-  // fetch data from local storage
   // create new elements
+  // fetch data from local storage
   // input data within elements
   // add button to go back to start screen
 };
@@ -146,7 +148,7 @@ var endGame = function () {
 };
 
 // on click, quizStart()
-startButtonEl.addEventListener("click", quizStart);
+startButtonEl.addEventListener("click", quizStart, startTimer);
 
 // view highscores button
 // viewScoreButtonEl.addEventListener("click", viewScores);
