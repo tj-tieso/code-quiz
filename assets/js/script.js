@@ -1,5 +1,4 @@
 //global variables
-// var choiceEl = document.querySelector("#choice");
 var questionIndex = 0;
 var quizTimer = 0;
 var score = 0;
@@ -8,6 +7,7 @@ var quizBoxEl = document.querySelector(".quiz-wrapper");
 var questionBoxEl = document.querySelector("#question-wrapper");
 var questionTitle = document.querySelector(".title");
 var startButtonEl = document.querySelector("#start-quiz");
+var viewScoreButtonEl = document.querySelector("#view-scores");
 var questionOneChoices = ["strings", "boolean", "alerts", "numbers"];
 var questionTwoChoices = [
   "quotes",
@@ -55,12 +55,10 @@ var questionOptions = [
     answer: "console.log",
   },
 ];
-console.log(questionOptions);
+
 //function to start game
 var quizStart = function () {
   score = 0;
-  // console.log(availableQuestions); // missing one question
-
   // start timer
 
   //removes paragraph
@@ -76,7 +74,7 @@ var quizStart = function () {
 };
 
 var generateQuestions = function () {
-  //get random question from array
+  //get question from array
   currentQuestion = questionOptions[questionIndex];
   questionTitle.textContent = currentQuestion.question;
   questionBoxEl.innerHTML = "";
@@ -93,19 +91,19 @@ var generateQuestions = function () {
       console.log(choice);
       if (choice !== currentQuestion.answer) {
         // displayResult(choice, currentQuestion.answer, "wrong");
-        displayResult(choice, currentQuestion.answer, "wrong");
+        displayResult(choice, currentQuestion.answer, "incorrect!");
+        // subtract from timer/score
+        //
       } else {
         // console.log(choice + " is correct");
-        displayResult(choice, currentQuestion.answer, "right");
+        displayResult(choice, currentQuestion.answer, "correct!");
       }
       questionIndex++;
       if (questionIndex === questionOptions.length) {
-        endGame();
+        endGame(); // replace with enterScore()
       } else {
         generateQuestions();
       }
-      // load new question after answer
-      // return generateQuestions();
     };
     // append choiceEl to ul
     questionBoxEl.appendChild(choiceEl);
@@ -122,13 +120,36 @@ var displayResult = function (choice, answer, result) {
   }, 1000);
 };
 
-var resetGame = function () {};
+var enterScore = function () {
+  // input initials
+  //log score and intials to local storage
+  //
+};
+
+var startScreen = function () {
+  //reset all elements to start screen
+};
+
+var viewScores = function () {
+  // fetch data from local storage
+  // create new elements
+  // input data within elements
+  // add button to go back to start screen
+};
 
 var endGame = function () {
   questionBoxEl.innerHTML = "";
   questionTitle.textContent = "";
   console.log("we out folks");
+
+  // reload starting page
 };
 
 // on click, quizStart()
 startButtonEl.addEventListener("click", quizStart);
+
+// view highscores button
+// viewScoreButtonEl.addEventListener("click", viewScores);
+viewScoreButtonEl.addEventListener("click", function (e) {
+  console.log("WIP");
+});
